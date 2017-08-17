@@ -22,4 +22,4 @@ Example:
 `# ./build-image dev container`
 
 #### The container contains:
-Git, Curl, Nodejs, Gulp, Bootstrap template
+Git, Curl, Nginx, Nodejs, Gulp, Bootstrap template
