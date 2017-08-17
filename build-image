@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Uncomment if you need to build a project from scratch
+# rm -rf workspace/* &> /dev/null
+rm -rf workspace/.* &> /dev/null
+rm -f start-cont &> /dev/null
+rm -f stop-cont &> /dev/null
+
+    if [ $# = 0 ]; then
+	echo -e "Parameters were not specified!"
+	echo -e "------------------------------"
+	exit 1
+    fi
+
+up=$(docker ps -a | grep $2 | awk '/gulp/ {print $7}')
+
+    if [ "$up" = "Up" ]; then
+	docker stop $2
+    fi
+
+docker build -t $1 .
+
+cat <<EOF > start-cont
+docker run -itd --rm -v $(pwd)/workspace/:/workspace -p 80:80 --name $2 $1
+EOF
+chmod +x start-cont
+./start-cont
+
+cat <<EOF > stop-cont
+docker stop $2
+EOF
+chmod +x stop-cont
