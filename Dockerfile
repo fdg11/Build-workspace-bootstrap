@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
     && rm -rf /var/lib/apt/lists/*
 
 # Install node.js
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -yqq \
       nodejs \
     && rm -rf /var/lib/apt/lists/*
