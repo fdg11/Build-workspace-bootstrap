@@ -17,7 +17,7 @@ up=$(docker ps -a | grep $2 | awk '/gulp/ {print $7}')
 	docker stop $2
     fi
 
-docker build -t $1 .
+docker build -t --no-cache $1 .
 
 cat <<EOF > start-cont
 docker run -itd --rm -v $(pwd)/workspace/:/workspace -p 80:80 --name $2 $1
