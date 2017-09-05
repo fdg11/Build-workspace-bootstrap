@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install --no-install-recommends --no-install-sugge
 
 ## NPM, GULP 
 # Global install gulp
-RUN npm install -g gulp &> /dev/null
+RUN npm install -g gulp
 
 # Define working directory.
 WORKDIR /workspace
