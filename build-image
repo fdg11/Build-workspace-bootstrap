@@ -11,7 +11,7 @@ rm -f stop-cont &> /dev/null
 	exit 1
     fi
 
-up=$(docker ps -a | grep $2 | awk '/gulp/ {print $7}')
+up=$(docker ps -a | grep $2 | awk '/$1/ {print $7}')
 
     if [ "$up" = "Up" ]; then
 	docker stop $2
