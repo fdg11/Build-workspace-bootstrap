@@ -13,6 +13,7 @@ Automate the deployment of the working environment under the bootstrap. Includes
 * `# git clone https://github.com/fdg11/Build-workspace-bootstrap.git`
 * `# cd Build-workspace-bootstrap`
 * `# ./build-image param1 param2`
+* `# ./start-cont`
 
 **param1** - the name of the image docker 
 **param2** - container name docker
