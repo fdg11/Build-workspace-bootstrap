@@ -23,7 +23,6 @@ cat <<EOF > start-cont
 docker run -itd --rm -v $(pwd)/workspace/:/workspace -p 80:80 --name $2 $1
 EOF
 chmod +x start-cont
-./start-cont
 
 cat <<EOF > stop-cont
 docker stop $2
